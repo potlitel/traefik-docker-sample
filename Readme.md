@@ -9,3 +9,27 @@ google: traefik cannot access to ip address for the container
 https://stackoverflow.com/questions/54007788/cant-get-correct-container-ip-using-traefik
 https://stackoverflow.com/questions/68456004/cant-connect-to-a-docker-container-using-its-ip-address
 https://www.reddit.com/r/Traefik/comments/11r4ssb/traefik_using_containers_ip_instead_of_hosts/
+
+
+```mermaid
+erDiagram
+          FsaCore }|..|{ Entities : has
+        %%   FsaCoreServer ||--o{ ORDER : places
+        %%   FsaCoreServer ||--o{ INVOICE : "liable for"
+        %%   Entities ||--o{ DocumentType : is
+        %%   Entities ||--o{ ServiceOrderTaskState : is
+        %%   Entities ||--o{ ServiceOrderType : is
+        %%   Entities ||--o{ SupplyOperation : is
+        %%   Entities ||--o{ Document : is
+        %%   Entities ||--o{ ServiceOrder : is
+        %%   Entities ||--o{ ServiceOrderRegister : is
+        %%   Entities ||--o{ ServiceOrderTask : is
+        %%   Entities ||--o{ Supply : is
+        %%   INVOICE ||--|{ ORDER : covers
+        %%   ORDER ||--|{ ORDER-ITEM : 
+          Entities }|--|{ ServiceOrderContext : areDBSets
+        %%   PRODUCT-CATEGORY ||--|{ PRODUCT : contains
+        %%   PRODUCT ||--o{ ORDER-ITEM : "ordered in"
+          FsaCore }|..|{ ServiceOrderContext : has
+          ServiceOrderContext ||--|{ DbContext : include
+```
