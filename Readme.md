@@ -16,18 +16,18 @@ erDiagram
           FsaCore }|..|{ Entities : has
         %%   FsaCoreServer ||--o{ ORDER : places
         %%   FsaCoreServer ||--o{ INVOICE : "liable for"
-        %%   Entities ||--o{ DocumentType : is
-        %%   Entities ||--o{ ServiceOrderTaskState : is
-        %%   Entities ||--o{ ServiceOrderType : is
-        %%   Entities ||--o{ SupplyOperation : is
-        %%   Entities ||--o{ Document : is
-        %%   Entities ||--o{ ServiceOrder : is
-        %%   Entities ||--o{ ServiceOrderRegister : is
-        %%   Entities ||--o{ ServiceOrderTask : is
-        %%   Entities ||--o{ Supply : is
+          Entities ||--o{ DocumentType : is
+          Entities ||--o{ ServiceOrderTaskState : is
+          Entities ||--o{ ServiceOrderType : is
+          Entities ||--o{ SupplyOperation : is
+          Entities ||--o{ Document : is
+          Entities ||--o{ ServiceOrder : is
+          Entities ||--o{ ServiceOrderRegister : is
+          Entities ||--o{ ServiceOrderTask : is
+          Entities ||--o{ Supply : is
         %%   INVOICE ||--|{ ORDER : covers
         %%   ORDER ||--|{ ORDER-ITEM : 
-          Entities }|--|{ ServiceOrderContext : areDBSets
+          DocumentType }|--|{ ServiceOrderContext : isDBSet
         %%   PRODUCT-CATEGORY ||--|{ PRODUCT : contains
         %%   PRODUCT ||--o{ ORDER-ITEM : "ordered in"
           FsaCore }|..|{ ServiceOrderContext : has
